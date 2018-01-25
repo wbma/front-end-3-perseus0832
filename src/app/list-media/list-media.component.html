@@ -1,0 +1,28 @@
+<input [(ngModel)]="stopName">
+<button class="btn btn-primary" (click)="onClk(stopName)">getStop</button>
+
+<div *ngFor = "let stops of stopArray">
+  <h3>{{stops.name}}</h3>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor = "let x of stops.patterns">
+        <p>{{x.name +" "+ x.route.shortName +" "+ x.route.longName}}</p>
+    </li>      
+  </ul>
+</div>
+
+<h1>
+  {{printThis}}
+</h1>
+
+<ul class="list-unstyled">    
+    <div class="card-deck">     
+        <li class="card" *ngFor="let media of mediaArray">
+            <img class="card-img-top" [src]="mediaService.mediaUrl + media.thumbnail">
+            <div class="card-body">
+                <h4 class="card-title">{{media.title}}</h4>
+                <p class="card-text">{{media.description}}</p>
+            </div>                
+        </li>                     
+    </div>
+</ul>
+
