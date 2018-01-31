@@ -14,15 +14,17 @@
   {{printThis}}
 </h1>
 
-<ul class="list-unstyled">    
-    <div class="card-deck">     
-        <li class="card" *ngFor="let media of mediaArray">
+<div class="card-deck">
+    <div class="row">     
+        <div class="col-sm-4" *ngFor="let media of mediaArray">
             <img class="card-img-top" [src]="mediaService.mediaUrl + media.thumbnail">
             <div class="card-body">
                 <h4 class="card-title">{{media.title}}</h4>
                 <p class="card-text">{{media.description}}</p>
             </div>                
-        </li>                     
+        </div>                     
     </div>
-</ul>
+</div>
+    
+
 
